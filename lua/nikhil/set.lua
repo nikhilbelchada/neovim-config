@@ -23,3 +23,8 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Tabs
+vim.keymap.set('n', '<C-n>', ":tabnew<CR>", { desc = '[T]ab New' })
+vim.keymap.set('n', '<C-o>', ":tabnext<CR>", { desc = '[T]ab Next' })
+vim.keymap.set('n', '<C-i>', ":tabprevious<CR>", { desc = '[T]ab Prev' })
