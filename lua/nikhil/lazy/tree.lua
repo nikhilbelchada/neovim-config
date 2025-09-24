@@ -1,5 +1,3 @@
-vim.keymap.set('n', '<leader>q', ':NvimTreeToggle<CR>', {})
-vim.keymap.set('n', '<leader>ff', ':NvimTreeFindFile<CR>', {})
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",

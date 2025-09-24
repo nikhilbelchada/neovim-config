@@ -28,3 +28,31 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<C-n>', ":tabnew<CR>", { desc = '[T]ab New' })
 vim.keymap.set('n', '<C-o>', ":tabnext<CR>", { desc = '[T]ab Next' })
 vim.keymap.set('n', '<C-i>', ":tabprevious<CR>", { desc = '[T]ab Prev' })
+
+-- Fterm
+vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+
+--- Fugutive
+vim.keymap.set('n', '<leader>gg', ":Git<CR>", { desc = '[G]it [T]oggle' })
+vim.keymap.set('n', '<leader>gc', ":Git commit<CR>", { desc = '[G]it [C]ommit' })
+vim.keymap.set('n', '<leader>gp', function()
+  require('FTerm').scratch({ cmd = 'echo "git push" && git push -v' })
+end, { desc = '[Git] [P]ush' })
+
+-- Micro Python
+vim.keymap.set("n", "<leader>mr", require("micropython_nvim").run)
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<C-a>', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = 'Telescope buffers' })
+-- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+
+-- Tree
+vim.keymap.set('n', '<leader>q', ':NvimTreeToggle<CR>', {})
+vim.keymap.set('n', '<leader>ff', ':NvimTreeFindFile<CR>', {})
+
